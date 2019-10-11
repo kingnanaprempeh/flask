@@ -5,12 +5,13 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-	names = ["Nana","King","Prempeh","A","Thank You God, I'm getting there "]
+    #return "Hello"
 	# now = datetime.datetime.now()
 	# newDay = now.day
 	# newMonth = now.month
 	# newYear = newDay == 1 and newMonth == 1
 	# newYear = True
+	names = ["Nana","King","Prempeh","A","Thank You God, I'm getting there "]
 	return render_template("index.html", content = names )
 
 @app.route("/prempeh")
@@ -20,12 +21,9 @@ def prempeh():
 
 @app.route("/donate", methods=["GET","POST"])
 def donate():
-	if request.method == "GET":	
-		name = request.form.get("name")
-		return render_template("donate.html", content = name )
-	else:	
-		name = request.form.get("name")
-		return render_template("donate.html", content = name )
+	name = request.form.get("name")
+	return render_template("donate.html", content = name )
+
 
 @app.route("/nana")
 def nana():

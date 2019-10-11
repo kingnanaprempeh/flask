@@ -8,22 +8,21 @@
 
 
 {% block body %}
-    <h1>Index Page</h1>
+    <h1>{{content}}</h1>
     <section style="text-align:center">
-        <ol>
-        {{content}}
-        {% for name in content %}
-            <li>{{name}}</li>
-        {% endfor %}
-        </ol>
+        <form action="{{ url_for('donate') }}" method="post">
+            <div class="form-group">
+              <label for=""></label>
+              <input type="text" class="form-control" name="name" id="" aria-describedby="helpId" placeholder="Enter Your Name">
+              <input type="submit" id="" class="btn btn-primary" role="button"></a>
+            </div>
+        </form>
         
         <!-- {% if content %}
         <h1> Yes it's New Year, results came back as {{content}}</h1>
         {% else %}
         <h1>No it's not New Year, results came back as {{content}}</h1>
         {% endif %} -->
-        <button id="red">Red</button>
-        <button id="blue">Blue</button>
-        <button id="green">Green</button>
+  
     </section>
 {% endblock  %}
